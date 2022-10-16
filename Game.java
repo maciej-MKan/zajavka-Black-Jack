@@ -1,8 +1,19 @@
 package zajavka.projects.black_jack;
 
-public interface Game {
+public class Game {
 
-    void innitGame(Player player, Player croupier, Deck deck);
+    private final CroupierImpl croupier;
+    private final Player human;
+    public Game(CroupierImpl croupier, Player human) {
+        this.croupier = croupier;
+        this.human = human;
+        human.takeCard(croupier.dealCard());
+        human.takeCard(croupier.dealCard());
+        croupier.takeCard(croupier.dealCard());
+        croupier.takeCard(croupier.dealCard());
+    }
 
-    void run();
+    private void playTurn(){
+
+    }
 }

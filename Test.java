@@ -4,8 +4,12 @@ public class Test {
 
     public static void main(String[] args) {
         Deck deck = new Deck();
-        Player human = new HumanPlayerImpl(deck);
+        Player human = new HumanPlayerImpl();
+        CroupierImpl croupierImpl = new CroupierImpl(deck, human);
 
-        System.out.println(human.showCards(Boolean.FALSE));
+        croupierImpl.playGame();
+        System.out.println(croupierImpl.showCards());
+        croupierImpl.setCard(croupierImpl.dealCard());
+        System.out.println(croupierImpl.showCards());
     }
 }

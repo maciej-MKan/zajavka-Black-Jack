@@ -1,21 +1,20 @@
 package zajavka.projects.black_jack;
 
+import zajavka.projects.projectCalculator.model.StorageCards;
+
 import java.util.List;
 
-public class HumanPlayerImpl extends Player {
+public class HumanPlayerImpl implements Player {
 
-    public HumanPlayerImpl(Deck deck) {
-        super(deck);
+    private final StorageCards storedCards = new StorageCards();
+
+    @Override
+    public void takeCard(Card card) {
+        storedCards.addCard(card);
     }
 
     @Override
-    public void playTurn() {
-
+    public List<Card> showCards() {
+        return storedCards.getCards(true);
     }
-
-    @Override
-    public List<Card> showCards(Boolean finalTurn) {
-        return storedCards;
-    }
-
 }

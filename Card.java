@@ -4,6 +4,9 @@ import java.util.Objects;
 
 public class Card {
 
+    public static Card revers = new Card(null, null);
+
+    private boolean showFace = true;
     private final Colors color;
     private final Figures figure;
 
@@ -12,9 +15,23 @@ public class Card {
         this.figure = figure;
     }
 
+    public Card withShowFace(){
+        showFace = true;
+        return this;
+    }
+
+    public Card withHideFace(){
+        showFace = false;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return figure + " of " + color;
+
+        if(showFace){
+            return figure + " of " + color;
+        }
+        return "<card>";
     }
 
     @Override

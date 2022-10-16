@@ -26,7 +26,7 @@ public class Deck {
         return cards.size();
     }
 
-    public Optional<Card> dealCard(){
+    public Optional<Card> getCard(){
         if (cards.size() > 0){
 
             return Optional.of(cards.remove());
