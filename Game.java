@@ -12,7 +12,7 @@ public class Game {
         this.human = human;
         human.takeCard(croupier.dealCard());
         human.takeCard(croupier.dealCard());
-        croupier.takeCard(croupier.dealCard());
+        croupier.takeCard(croupier.dealCard().withHideFace());
         croupier.takeCard(croupier.dealCard());
         playGame();
     }
@@ -20,10 +20,15 @@ public class Game {
     private void playGame(){
 
         playingTable.showTurnState(croupier, human);
-        countService.checkOverTwenty(human);
+        try {
+            countService.checkOverTwenty(human);
+        } catch (Exception e){
+            System.out.println(e);
+        }
         if (askingService.humanTakeNextCard(human)){
             playGame();
         }
+        croupier.showSelfCards();
         askingService.croupierTakeNextCard(croupier);
         playingTable.showSummary(croupier, human, countService.checkWinner(croupier, human));
 

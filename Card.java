@@ -4,15 +4,16 @@ import java.util.Objects;
 
 public class Card {
 
-    public static Card revers = new Card(null, null);
-
     private boolean showFace = true;
     private final Colors color;
     private final Figures figure;
 
+    private final int value;
+
     public Card(Colors color, Figures figure) {
         this.color = color;
         this.figure = figure;
+        this.value = color.ordinal();
     }
 
     public Card withShowFace(){
@@ -20,9 +21,17 @@ public class Card {
         return this;
     }
 
+//    private void setShowFace(){
+//        showFace = true;
+//    }
+
     public Card withHideFace(){
         showFace = false;
         return this;
+    }
+
+    public int getValue() {
+        return value;
     }
 
     @Override
