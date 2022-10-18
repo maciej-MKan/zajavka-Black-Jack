@@ -11,9 +11,9 @@ public enum Figures {
     EIGHT(8),
     NINE(9),
     TEN(10),
-    J(11),
-    Q(12),
-    K(13),
+    J(10),
+    Q(10),
+    K(10),
     AS(1),
     ;
     private final int value;
