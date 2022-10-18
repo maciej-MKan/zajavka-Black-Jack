@@ -1,5 +1,6 @@
 package zajavka.projects.black_jack;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Optional;
 
@@ -7,7 +8,7 @@ public class Deck {
 
     private final LinkedList<Card> cards = new LinkedList<>();
 
-    public Deck() {
+    private Deck() {
         Figures[] figures = Figures.values();
         for (Figures figure : figures) {
             Colors[] colors = Colors.values();
@@ -24,6 +25,12 @@ public class Deck {
 
     public int getCountOfCards() {
         return cards.size();
+    }
+
+    public static Deck getShuffledDeck(){
+        Deck deck = new Deck();
+        Collections.shuffle(deck.cards);
+        return deck;
     }
 
     public Optional<Card> getCard(){

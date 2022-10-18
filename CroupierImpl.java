@@ -1,12 +1,11 @@
 package zajavka.projects.black_jack;
 
-import java.util.List;
 import java.util.Optional;
 
-public class CroupierImpl extends PlayerUtility{
+public class CroupierImpl extends PlayerUtility {
 
-    private Deck deck;
     private final Player human;
+    private Deck deck;
     private Game game;
 
     public CroupierImpl(Deck deck, Player human) {
@@ -14,16 +13,16 @@ public class CroupierImpl extends PlayerUtility{
         this.human = human;
     }
 
-    public Card dealCard(){
+    public Card dealCard() {
         Optional<Card> card = deck.getCard();
-        if (card.isPresent()){
+        if (card.isPresent()) {
             return card.get();
         }
-        deck = new Deck();
+        deck = Deck.getShuffledDeck();
         return dealCard();
     }
 
-    public void playGame(){
+    public void playGame() {
         game = new Game(this, human);
     }
 
