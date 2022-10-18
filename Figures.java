@@ -16,9 +16,14 @@ public enum Figures {
     K(10),
     AS(1),
     ;
+
     private final int value;
 
     Figures(int value) {
         this.value = value;
+    }
+
+    public int getValue() {
+        return value;
     }
 }

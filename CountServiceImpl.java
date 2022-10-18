@@ -6,7 +6,7 @@ public class CountServiceImpl implements CountService {
         int points = 0;
         for (Card card: human.showCards()) {
             points += card.getValue();
-            if (points == 20){
+            if (points == 21){
                 throw new Exception("Black Jack! You won");
             }
             if (points > 21){

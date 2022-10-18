@@ -21,12 +21,13 @@ public class Game {
 
         playingTable.showTurnState(croupier, human);
         try {
-            countService.checkOverTwenty(human);
+            while(askingService.humanTakeNextCard(human)){
+                human.takeCard(croupier.dealCard());
+                playingTable.showTurnState(human);
+                countService.checkOverTwenty(human);
+            }
         } catch (Exception e){
-            System.out.println(e);
-        }
-        if (askingService.humanTakeNextCard(human)){
-            playGame();
+            System.out.println(e.getMessage());
         }
         croupier.showSelfCards();
         askingService.croupierTakeNextCard(croupier);

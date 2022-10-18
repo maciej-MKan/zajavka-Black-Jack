@@ -6,7 +6,12 @@ public class PlayingTableImpl implements PlayingTable {
         System.out.println("Croupier have: " + croupier.showCards());
         System.out.println("Your cards: " + human.showCards());
         System.out.println();
+    }
 
+    @Override
+    public void showTurnState(Player human) {
+        System.out.println("Your cards: " + human.showCards());
+        System.out.println();
     }
 
     @Override

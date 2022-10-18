@@ -13,17 +13,13 @@ public class Card {
     public Card(Colors color, Figures figure) {
         this.color = color;
         this.figure = figure;
-        this.value = color.ordinal();
+        this.value = figure.getValue();
     }
 
     public Card withShowFace(){
         showFace = true;
         return this;
     }
-
-//    private void setShowFace(){
-//        showFace = true;
-//    }
 
     public Card withHideFace(){
         showFace = false;
