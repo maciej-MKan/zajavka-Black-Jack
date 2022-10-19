@@ -28,7 +28,7 @@ public class CountServiceImpl implements CountService {
             points += card.getValue();
         }
         for (int i = aces.size(); i > 0; i--) {
-            points += (points + i) < 10 ? 11 : 1;
+            points += (points + i - 1) < 11 ? 11 : 1;
         }
         return points;
     }

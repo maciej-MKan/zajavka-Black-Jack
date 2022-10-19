@@ -31,12 +31,12 @@ public class Game {
             while (askingService.humanTakeNextCard()) {
                 human.takeCard(croupier.dealCard());
                 playingTable.showTurnState(human);
-                countService.checkOverTwenty(human);
             }
+            countService.checkOverTwenty(human);
             while (askingService.croupierTakeNextCard(croupier)) {
                 croupier.takeCard(croupier.dealCard());
-                countService.checkOverTwenty(croupier);
             }
+            countService.checkOverTwenty(croupier);
         } catch (Exception e) {
             playingTable.showException(e);
         }
