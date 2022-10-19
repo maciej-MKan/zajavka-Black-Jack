@@ -1,4 +1,4 @@
-package zajavka.projects.black_jack;
+package zajavka.projects.black_jack.service;
 
 public interface AskingService {
     boolean humanTakeNextCard();

@@ -1,4 +1,6 @@
-package zajavka.projects.black_jack;
+package zajavka.projects.black_jack.model;
+
+import zajavka.projects.black_jack.service.*;
 
 public class Game {
 

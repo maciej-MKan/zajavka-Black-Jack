@@ -1,4 +1,4 @@
-package zajavka.projects.black_jack;
+package zajavka.projects.black_jack.service;
 
 public interface CountService {
     void checkOverTwenty(Player human) throws Exception;

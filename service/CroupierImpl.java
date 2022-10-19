@@ -1,4 +1,8 @@
-package zajavka.projects.black_jack;
+package zajavka.projects.black_jack.service;
+
+import zajavka.projects.black_jack.model.Card;
+import zajavka.projects.black_jack.model.Deck;
+import zajavka.projects.black_jack.model.Game;
 
 import java.util.Optional;
 

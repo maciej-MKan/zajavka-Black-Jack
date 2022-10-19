@@ -1,4 +1,7 @@
-package zajavka.projects.black_jack;
+package zajavka.projects.black_jack.model;
+
+import zajavka.projects.black_jack.model.data.Colors;
+import zajavka.projects.black_jack.model.data.Figures;
 
 import java.util.Collections;
 import java.util.LinkedList;
