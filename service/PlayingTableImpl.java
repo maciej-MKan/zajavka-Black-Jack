@@ -2,6 +2,12 @@ package zajavka.projects.black_jack.service;
 
 public class PlayingTableImpl implements PlayingTable {
     @Override
+    public void showWelcome() {
+        System.out.println("Welcome to the casino. Pleasant gameplay.");
+        System.out.println();
+    }
+
+    @Override
     public void showTurnState(Player croupier, Player human) {
         System.out.println("Croupier have: " + croupier.showCards());
         System.out.println("Your cards: " + human.showCards());

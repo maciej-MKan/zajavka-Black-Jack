@@ -11,7 +11,7 @@ public class AskingServiceImpl implements AskingService {
         return switch (choice.nextLine().toLowerCase()) {
             case "y" -> true;
             case "n" -> false;
-            default -> askAgain();
+            default ->  askAgain();
         };
     }
 
@@ -24,5 +24,17 @@ public class AskingServiceImpl implements AskingService {
     @Override
     public boolean croupierTakeNextCard(CroupierImpl croupier) {
         return croupier.hitCardDecision();
+    }
+
+    @Override
+    public boolean playAgain() {
+        Scanner choice = new Scanner(System.in);
+        System.out.println();
+        System.out.println("Do you wont play again? (y/n) ");
+        return switch (choice.nextLine().toLowerCase()) {
+            case "y" -> true;
+            case "n" -> false;
+            default ->  playAgain();
+        };
     }
 }
