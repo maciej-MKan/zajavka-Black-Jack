@@ -36,8 +36,7 @@ public class Game {
                 countService.checkOverTwenty(croupier);
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println();
+            playingTable.showException(e);
         }
         playingTable.showSummary(croupier, human, countService.checkWinner(croupier, human));
 

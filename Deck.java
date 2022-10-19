@@ -34,7 +34,7 @@ public class Deck {
     }
 
     public Optional<Card> getCard(){
-        if (cards.size() > 0){
+        if (getCountOfCards() > 0){
 
             return Optional.of(cards.remove());
         }

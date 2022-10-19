@@ -21,4 +21,10 @@ public class PlayingTableImpl implements PlayingTable {
         System.out.println();
         System.out.println("The winner is : " + checkWinner);
     }
+
+    @Override
+    public void showException(Exception e) {
+        System.out.println(e.getMessage());
+        System.out.println();
+    }
 }
