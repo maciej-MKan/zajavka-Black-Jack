@@ -1,7 +1,5 @@
 package zajavka.projects.black_jack;
 
-import zajavka.projects.black_jack.Card;
-
 import java.util.ArrayList;
 import java.util.List;
 

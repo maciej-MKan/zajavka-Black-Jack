@@ -1,7 +1,7 @@
 package zajavka.projects.black_jack;
 
 public interface AskingService {
-    boolean humanTakeNextCard(Player human);
+    boolean humanTakeNextCard();
 
-    void croupierTakeNextCard(CroupierImpl croupier);
+    boolean croupierTakeNextCard(CroupierImpl croupier);
 }

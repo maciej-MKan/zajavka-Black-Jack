@@ -7,9 +7,13 @@ public class Game {
     private final PlayingTable playingTable = new PlayingTableImpl();
     private final CountService countService = new CountServiceImpl();
     private final AskingService askingService = new AskingServiceImpl();
+
     public Game(CroupierImpl croupier, Player human) {
         this.croupier = croupier;
         this.human = human;
+    }
+
+    public void startGame() {
         human.takeCard(croupier.dealCard());
         human.takeCard(croupier.dealCard());
         croupier.takeCard(croupier.dealCard().withHideFace());
@@ -17,20 +21,24 @@ public class Game {
         playGame();
     }
 
-    private void playGame(){
+    private void playGame() {
 
         playingTable.showTurnState(croupier, human);
+        croupier.showSelfCards();
         try {
-            while(askingService.humanTakeNextCard(human)){
+            while (askingService.humanTakeNextCard()) {
                 human.takeCard(croupier.dealCard());
                 playingTable.showTurnState(human);
                 countService.checkOverTwenty(human);
             }
-        } catch (Exception e){
+            while (askingService.croupierTakeNextCard(croupier)) {
+                croupier.takeCard(croupier.dealCard());
+                countService.checkOverTwenty(croupier);
+            }
+        } catch (Exception e) {
             System.out.println(e.getMessage());
+            System.out.println();
         }
-        croupier.showSelfCards();
-        askingService.croupierTakeNextCard(croupier);
         playingTable.showSummary(croupier, human, countService.checkWinner(croupier, human));
 
     }
